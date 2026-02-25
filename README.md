@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+**Git / Deploy:** Сохранённый remote с токеном (bhau65610-oss → cryptostylematrix/cs-mini-app) настроен **только для этого репозитория** (frontend-main). Остальные проекты в папке (frontend-main_copy, miniapp, newD) не трогаются и остаются как были.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
