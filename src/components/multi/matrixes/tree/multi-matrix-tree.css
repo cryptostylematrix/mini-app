@@ -1,0 +1,20 @@
+.matrix-row--layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  min-width: 0; /* позволить сжатие на мобильных, чтобы не обрезало справа */
+}
+
+.matrix-row--layout > * {
+  min-width: 0; /* grid-элементы могут сжиматься по ширине контейнера */
+}
+
+/* Телефоны: дерево сверху, детали снизу, удобный тап */
+@media (max-width: 768px) {
+  .matrix-row--layout {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+}

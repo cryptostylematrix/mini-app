@@ -1,0 +1,311 @@
+/* Вкладка «Матрицы» — панели белые, фон страницы нейтральный, без жёлтого перебора. */
+
+/* ========== Палитра панелек ========== */
+.matrixes-tab {
+  --mt-page-bg: #f5f5f5;       /* фон страницы — нейтральный светло-серый */
+  --mt-panel-bg: #ffffff;      /* фон панелей — белый */
+  --mt-panel-border: rgba(0, 0, 0, 0.08);  /* рамка панелей — нейтральная серая */
+  --mt-panel-radius: 12px;
+  background: var(--mt-page-bg);
+}
+
+/* --- Панель фильтров --- */
+.matrixes-tab .matrix-row--filters {
+  background: var(--mt-panel-bg);
+  border: 1px solid var(--mt-panel-border);
+  border-radius: var(--mt-panel-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.matrixes-tab .filter-label {
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* Поля — белый фон, нейтральная рамка, стрелка акцентная */
+.matrixes-tab .filter-input {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: var(--color-text) !important;
+}
+
+.matrixes-tab .filter-select {
+  background-color: #ffffff !important;
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-accent) 50%),
+    linear-gradient(135deg, var(--color-accent) 50%, transparent 50%) !important;
+  background-position: calc(100% - 12px) center, calc(100% - 6px) center !important;
+  background-size: 6px 6px, 6px 6px !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: var(--color-text) !important;
+  padding-right: 2rem !important;
+}
+
+.matrixes-tab .filter-select:focus {
+  background-image: linear-gradient(225deg, transparent 50%, var(--color-accent) 50%),
+    linear-gradient(315deg, var(--color-accent) 50%, transparent 50%) !important;
+  outline: none;
+}
+
+/* Кнопки «Купить» и «След. позиция» — как TonConnect: bg-accent, белый текст */
+.matrixes-tab .filter-button.primary,
+.matrixes-tab .filter-button.next-pos-button {
+  background: var(--color-accent) !important;
+  color: var(--color-card) !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.matrixes-tab .filter-button.primary:hover:not(:disabled),
+.matrixes-tab .filter-button.next-pos-button:hover:not(:disabled) {
+  background: var(--color-accent-dark) !important;
+  color: var(--color-card) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+/* «Обновить страницу» — белый фон, нейтральная рамка */
+.matrixes-tab .filter-button.update-page-button:not(.next-pos-button) {
+  background: #ffffff !important;
+  color: var(--color-text) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: none !important;
+}
+
+.matrixes-tab .filter-button.update-page-button:not(.next-pos-button):hover:not(:disabled) {
+  background: #f9f9f9 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Поля Places / Search — белый фон */
+.matrixes-tab .custom-select__trigger {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: var(--color-text) !important;
+}
+
+.matrixes-tab .custom-select__arrow {
+  border-color: var(--color-accent) !important;
+}
+
+.matrixes-tab .custom-select__option.is-selected,
+.matrixes-tab .custom-select__option:hover {
+  background: rgba(var(--color-accent-rgb), 0.1) !important;
+  color: var(--color-text) !important;
+}
+
+.matrixes-tab .combobox-input {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: var(--color-text) !important;
+}
+
+.matrixes-tab .combobox-item:hover {
+  background: rgba(var(--color-accent-rgb), 0.08) !important;
+}
+
+/* --- Хлебные крошки --- */
+.matrixes-tab .matrix-row--breadcrumbs {
+  background: var(--mt-panel-bg);
+  border: 1px solid var(--mt-panel-border);
+  border-top: none;
+  border-radius: 0 0 var(--mt-panel-radius) var(--mt-panel-radius);
+  padding: 0.6rem 0.9rem;
+}
+
+.matrixes-tab .breadcrumbs-bar {
+  color: #3d3d3d;
+}
+
+/* Текущий элемент (выбранный) — тёмный коричнево-чёрный */
+.matrixes-tab .breadcrumb-current {
+  background: transparent;
+  color: #3d3d3d !important;
+  font-weight: 700;
+}
+
+/* Ссылки пути — золотисто-жёлтый */
+.matrixes-tab .breadcrumb-link {
+  color: #bf8b0b !important;
+  background: transparent;
+}
+
+.matrixes-tab .breadcrumb-link:hover {
+  color: #a67a0a !important;
+  background: rgba(191, 139, 11, 0.08);
+}
+
+/* Разделитель (/) — средне-серый */
+.matrixes-tab .breadcrumb-sep {
+  color: #7f7f7f !important;
+}
+
+.matrixes-tab .breadcrumbs-placeholder {
+  color: #3d3d3d;
+  opacity: 0.8;
+}
+
+.matrixes-tab .breadcrumbs-up {
+  background: #f0f0f0;
+  color: var(--color-text);
+}
+
+.matrixes-tab .breadcrumbs-up:hover:enabled {
+  background: #e5e5e5;
+  color: var(--color-text);
+}
+
+/* --- Дерево матрицы (левая панелька) --- */
+.matrixes-tab .tree-panel {
+  background: var(--mt-panel-bg);
+  border: 1px solid var(--mt-panel-border);
+  border-radius: var(--mt-panel-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.matrixes-tab .tree-canvas {
+  background: var(--mt-page-bg);
+}
+
+/* Корневой узел — такой же блок, как и остальные 6 (скруглённый прямоугольник) */
+.matrixes-tab .tree-level:nth-child(1) .tree-node-wrapper {
+  align-items: stretch;
+}
+
+/* «След. позиция» — светлый зелёный фон */
+.matrixes-tab .tree-node.node-next {
+  background: #d4edda !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.matrixes-tab .tree-node.node-next .tree-node__login {
+  color: var(--color-text);
+}
+
+/* Остальные узлы — белый фон, нейтральная рамка */
+.matrixes-tab .tree-node {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: var(--color-text) !important;
+  box-shadow: none;
+}
+
+.matrixes-tab .tree-node:hover {
+  border-color: rgba(var(--color-accent-rgb), 0.7) !important;
+  box-shadow: 0 6px 14px rgba(var(--color-accent-rgb), 0.15) !important;
+}
+
+.matrixes-tab .tree-node.is-selected {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 2px rgba(var(--color-accent-rgb), 0.25) !important;
+}
+
+.matrixes-tab .tree-node.node-locked {
+  background: #fef2f2 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.matrixes-tab .tree-node.node-filled:not(.node-locked) {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* --- Правая панелька «Детали места» --- */
+.matrixes-tab .details-panel {
+  background: var(--mt-panel-bg) !important;
+  border: 1px solid var(--mt-panel-border) !important;
+  border-left: 4px solid var(--color-accent) !important;
+  border-radius: var(--mt-panel-radius) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+.matrixes-tab .details-panel--locked,
+.matrixes-tab .details-panel--next {
+  background: var(--mt-panel-bg) !important;
+  border-left: 4px solid var(--color-accent) !important;
+}
+
+.matrixes-tab .details-label,
+.matrixes-tab .details-line,
+.matrixes-tab .details-type-inline,
+.matrixes-tab .details-id-inline,
+.matrixes-tab .details-meta__date,
+.matrixes-tab .details-meta__desc {
+  color: var(--color-text) !important;
+}
+
+/* Кнопка «Вверх» */
+.matrixes-tab .details-action--ghost {
+  background: #f0f0f0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: var(--color-text) !important;
+}
+
+.matrixes-tab .details-action--ghost:hover {
+  background: #e5e5e5 !important;
+}
+
+/* Логин «eric» — золотой цвет текста (как на фото) */
+.matrixes-tab .details-meta__login {
+  color: var(--color-accent) !important;
+  font-weight: 800;
+}
+
+.matrixes-tab .details-meta__login,
+.matrixes-tab .details-id-inline {
+  background: transparent;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* «Open in TonViewer» — как кнопка TonConnect: bg-accent, белый текст */
+.matrixes-tab .details-meta__tonviewer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.6rem;
+  margin-top: 0.35rem;
+  background: var(--color-accent) !important;
+  color: var(--color-card) !important;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.matrixes-tab .details-meta__tonviewer-link:hover {
+  background: var(--color-accent-dark) !important;
+  color: var(--color-card) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.matrixes-tab .details-action--primary {
+  background: var(--color-accent) !important;
+  color: var(--color-card) !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.matrixes-tab .details-action--primary:hover {
+  background: var(--color-accent-dark) !important;
+  color: var(--color-card) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.matrixes-tab .details-nav__btn {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: var(--color-text) !important;
+}
+
+.matrixes-tab .details-avatar img,
+.matrixes-tab .details-avatar__placeholder {
+  border-color: rgba(var(--color-accent-rgb), 0.5) !important;
+}
+
+.matrixes-tab .locks-loading {
+  color: var(--color-accent-dark);
+}

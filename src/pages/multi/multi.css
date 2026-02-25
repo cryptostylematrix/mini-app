@@ -1,0 +1,122 @@
+/* ===========================
+   Multi — стили контента подвкладок (как в профиле: карточки, акцент)
+   =========================== */
+
+/* Бургер на мобильных: кнопка + выпадающее меню */
+.multi-burger-wrap {
+  width: 100%;
+}
+
+.multi-burger-dropdown {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  pointer-events: none;
+  transition:
+    opacity 0.22s ease-out,
+    transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1),
+    box-shadow 0.25s ease;
+}
+
+.multi-burger-dropdown--open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(201, 162, 39, 0.08);
+}
+
+@keyframes multi-burger-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.multi-burger-dropdown--open .multi-burger-item {
+  animation: multi-burger-item-in 0.28s ease-out backwards;
+}
+
+.multi-burger-dropdown .multi-burger-item:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+.multi-burger-dropdown .multi-burger-item:last-child {
+  border-radius: 0 0 12px 12px;
+}
+
+.multi-burger-dropdown .multi-burger-item:only-child {
+  border-radius: 12px;
+}
+
+.multi-matrixes,
+.matrixes-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: var(--color-text);
+}
+
+.matrix-row {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none;
+}
+
+.matrix-row h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.placeholder-text {
+  margin: 0;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+/* Карточки: матрицы и пригласитель — акцент, структура/маркетинг/статистика — нейтральные */
+.multi-tab-unified,
+.matrixes-tab {
+  --mt-panel-border: rgba(var(--color-accent-rgb), 0.35);
+  --mt-panel-radius: 16px;
+}
+
+.multi-tab-unified .multi-panel,
+.matrixes-tab .multi-panel {
+  background: linear-gradient(180deg, #fffefa 0%, #fff9f0 100%) !important;
+  border: 1px solid var(--mt-panel-border) !important;
+  border-radius: var(--mt-panel-radius) !important;
+  box-shadow: none !important;
+}
+
+.multi-tab-unified .multi-panel.ring-1,
+.multi-tab-unified .multi-panel[class*="ring-"],
+.matrixes-tab .multi-panel.ring-1,
+.matrixes-tab .multi-panel[class*="ring-"] {
+  --tw-ring-color: transparent;
+  box-shadow: none !important;
+}
+
+.multi-tab-unified .inviter-info {
+  background: linear-gradient(180deg, #fffefa 0%, #fff9f0 100%) !important;
+  border: 1px solid var(--mt-panel-border) !important;
+  border-radius: var(--mt-panel-radius) !important;
+  box-shadow: none !important;
+}
+
+/* Структура, маркетинг, статистика — без оранжевого */
+.multi-tab-neutral .multi-panel,
+.multi-tab-neutral .multi-panel.ring-1,
+.multi-tab-neutral .multi-panel[class*="ring-"] {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: var(--mt-panel-radius) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  --tw-ring-color: transparent;
+}
