@@ -9,7 +9,6 @@ i18n
   .use(initReactI18next) // 🔹 connects i18next to React
   .init({
     fallbackLng: "ru", // язык по умолчанию
-    lng: "ru", // изначально русский
     debug: import.meta.env.DEV, // only log in dev mode
     
     // All supported languages
@@ -27,9 +26,8 @@ i18n
       // если язык не сохранён — по умолчанию русский
     },
 
-     backend: {
-      // path to your translation files
-      loadPath: "/locales/{{lng}}/translation.json",
+    backend: {
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/translation.json`,
     },
   })
   .then(() => {

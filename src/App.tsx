@@ -54,7 +54,7 @@ function App() {
   return (
     <WalletContext.Provider value={{ wallet, setWallet }}>
       <ProfileProvider wallet={wallet} tonConnectUI={tonConnectUI}>
-        <BrowserRouter basename="/">
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <TrailingSlashRedirect />
           <div className="min-h-screen bg-app text-app flex flex-col font-inter">
             <Header />
