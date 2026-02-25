@@ -42,6 +42,14 @@ build/Release
 # Vite build output
 /build
 
+# Локальные копии и подпроект — не заливать
+/newD
+/dist — копия
+/dist *
+
+# Архив не-проектных файлов (перенесено в old/)
+/old
+
 # Dependency directories
 node_modules/
 jspm_packages/
