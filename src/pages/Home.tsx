@@ -3,10 +3,12 @@ import { AlertTriangle, Send, User, UserX, Wallet } from "lucide-react";
 import { useContext, useEffect, useState, type ComponentType } from "react";
 import { WalletContext } from "../App";
 import { useProfileContext } from "../context/ProfileContext";
+import { useAuth } from "../context/AuthContext";
 import { getContractBalance } from "../services/contractsApi";
 import { useTranslation } from "react-i18next";
 import { translateError } from "../errors/errorUtils";
 import { ErrorCode } from "../errors/ErrorCodes";
+import SocialAuthBlock, { SocialAuthError } from "../components/auth/SocialAuthBlock";
 
 type StatusCardProps = {
   icon: ComponentType<{ className?: string }>;
@@ -223,6 +225,8 @@ export default function Home() {
     defaultValue: "Чтобы использовать сайт, добавьте профиль.",
   });
 
+  const { authError, clearAuthError } = useAuth();
+
   if (!wallet) {
     return (
       <div className="animate-fade-in-up min-h-[70vh] flex flex-col items-center justify-center p-6 relative">
@@ -230,7 +234,11 @@ export default function Home() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ backgroundColor: "var(--color-accent)" }}></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ backgroundColor: "var(--color-accent-dark)" }}></div>
         </div>
-        <StatusCard icon={Wallet} title={walletTitle} subtitle={walletDescription} />
+        <div className="relative z-10 flex flex-col items-center w-full max-w-md">
+          <StatusCard icon={Wallet} title={walletTitle} subtitle={walletDescription} />
+          <SocialAuthBlock />
+          {authError && <SocialAuthError message={authError} onDismiss={clearAuthError} />}
+        </div>
       </div>
     );
   }

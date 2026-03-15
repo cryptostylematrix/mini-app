@@ -4,6 +4,12 @@
     "copyAddress": "Copia indirizzo",
     "disconnect": "Disconnetti"
   },
+  "auth": {
+    "or_social": "Oppure accedi con",
+    "vkid": "Accedi con VK ID",
+    "yandex": "Accedi con Yandex",
+    "error_title": "Errore di accesso"
+  },
   "profile": {
     "checking": "Verifica dei profili...",
     "add": "+ Aggiungi profilo",

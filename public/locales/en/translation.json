@@ -4,6 +4,12 @@
     "copyAddress": "Copy address",
     "disconnect": "Disconnect"
   },
+  "auth": {
+    "or_social": "Or sign in with",
+    "vkid": "Sign in with VK ID",
+    "yandex": "Sign in with Yandex",
+    "error_title": "Sign-in error"
+  },
   "profile": {
     "checking": "Checking profiles...",
     "add": "+ Add a Profile",

@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 
 import { ProfileProvider } from "./context/ProfileContext";
+import { AuthProvider } from "./context/AuthContext";
 import { useTonConnectUI } from "@tonconnect/ui-react";
 
 // Lazy load pages for code splitting
@@ -53,8 +54,9 @@ function App() {
 
   return (
     <WalletContext.Provider value={{ wallet, setWallet }}>
-      <ProfileProvider wallet={wallet} tonConnectUI={tonConnectUI}>
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <AuthProvider>
+        <ProfileProvider wallet={wallet} tonConnectUI={tonConnectUI}>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
           <TrailingSlashRedirect />
           <div className="min-h-screen bg-app text-app flex flex-col font-inter">
             <Header />
@@ -90,7 +92,8 @@ function App() {
             <Navigation />
           </div>
         </BrowserRouter>
-      </ProfileProvider>
+        </ProfileProvider>
+      </AuthProvider>
     </WalletContext.Provider>
   );
 }

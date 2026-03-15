@@ -4,6 +4,12 @@
     "copyAddress": "Cím másolása",
     "disconnect": "Leválasztás"
   },
+  "auth": {
+    "or_social": "Vagy jelentkezzen be",
+    "vkid": "Bejelentkezés VK ID-val",
+    "yandex": "Bejelentkezés Yandex-szel",
+    "error_title": "Bejelentkezési hiba"
+  },
   "profile": {
     "checking": "Profilok ellenőrzése...",
     "add": "+ Profil hozzáadása",

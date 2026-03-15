@@ -4,6 +4,12 @@
     "copyAddress": "Kopiuj adres",
     "disconnect": "Odłącz"
   },
+  "auth": {
+    "or_social": "Lub zaloguj się przez",
+    "vkid": "Zaloguj przez VK ID",
+    "yandex": "Zaloguj przez Yandex",
+    "error_title": "Błąd logowania"
+  },
   "profile": {
     "checking": "Sprawdzanie profili...",
     "add": "+ Dodaj profil",
